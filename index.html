@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фон по цвету изображения</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Обновленный путь к CSS файлу -->
+</head>
+<body>
+    <div class="content">
+        <h1>SamuraiSearch</h1>
+        <img src="https://production-enterprise-static.downloads.crowdin.com/405200002/organization-logo/small/d9eb7383276df3043b66867e1617f889253.png" alt="Avatar" style="border-radius: 10px; max-width: 100%; height: auto;">
+        
+        <!-- Поисковая строка и кнопка -->
+        <div class="search-container">
+            <input type="text" class="search-input" id="searchQuery" placeholder="Введите запрос...">
+            <button class="search-button" onclick="searchGoogle()">Поиск</button>
+        </div>
+
+        <div>
+            <a href="https://example.com/link1">Тык 1</a>
+            <a href="https://example.com/link2">Тык 2</a>
+            <a href="https://example.com/link3">Тык 3</a>
+        </div>
+    </div>
+
+    <script>
+        function searchGoogle() {
+            const query = document.getElementById('searchQuery').value;
+            const url = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+            window.open(url, '_blank'); // Открыть в новой вкладке
+        }
+    </script>
+</body>
+</html>
