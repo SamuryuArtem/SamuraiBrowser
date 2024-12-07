@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Фон по цвету изображения</title>
     <link rel="stylesheet" href="css/styles.css"> <!-- Обновленный путь к CSS файлу -->
+    <style>
+        .error-message {
+            color: red;
+            display: none; /* Скрываем сообщение по умолчанию */
+        }
+    </style>
 </head>
 <body>
     <div class="content">
@@ -16,13 +22,21 @@
             <input type="text" class="search-input" id="searchQuery" placeholder="Введите запрос...">
             <button class="search-button" onclick="searchGoogle()">Поиск</button>
         </div>
+        <div class="error-message" id="errorMessage">Введите поисковый запрос!</div> <!-- Ошибочное сообщение -->
     </div>
 
     <script>
         function searchGoogle() {
-            const query = document.getElementById('searchQuery').value;
-            const url = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
-            window.location.href = url; // Открыть в той же вкладке
+            const query = document.getElementById('searchQuery').value.trim(); // Удаляем пробелы
+            const errorMessage = document.getElementById('errorMessage'); // Получаем элемент для сообщения об ошибке
+
+            if (query === "") {
+                errorMessage.style.display = "block"; // Показываем сообщение об ошибке
+            } else {
+                errorMessage.style.display = "none"; // Скрываем сообщение об ошибке
+                const url = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+                window.location.href = url; // Открыть в той же вкладке
+            }
         }
     </script>
 </body>
