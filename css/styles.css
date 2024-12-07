@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: #f97216; /* Цвет фона */
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+a {
+    display: inline-block; /* Изменено на inline-block для квадратов */
+    margin: 10px 0;
+    padding: 15px 30px; /* Добавлено внутреннее отступление */
+    font-size: 24px;
+    text-decoration: none;
+    color: #f97216; /* Цвет текста */
+    background-color: white; /* Белый фон */
+    border-radius: 10px; /* Закругленные углы */
+    transition: background-color 0.3s, color 0.3s; /* Плавный переход */
+}
+
+a:hover {
+    background-color: #ffcc00; /* Цвет фона при наведении */
+    color: white; /* Цвет текста при наведении */
+}
+
+.search-container {
+    margin-bottom: 20px; /* Отступ снизу для разделения с кнопками */
+}
+
+.search-input {
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid #f97216;
+    border-radius: 5px;
+    width: 300px; /* Ширина поля ввода */
+    margin-right: 10px; /* Отступ справа */
+}
+
+.search-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #f97216; /* Цвет текста */
+    background-color: white; /* Белый фон */
+    border: 2px solid #f97216; /* Граница */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Плавный переход */
+}
+
+.search-button:hover {
+    background-color:  #f66013; /* Цвет кнопки при наведении */
+    color: white; /* Цвет текста при наведении */
+}
