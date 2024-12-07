@@ -22,7 +22,7 @@
         function searchGoogle() {
             const query = document.getElementById('searchQuery').value;
             const url = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
-            window.open(url, '_blank'); // Открыть в новой вкладке
+            window.location.href = url; // Открыть в той же вкладке
         }
     </script>
 </body>
