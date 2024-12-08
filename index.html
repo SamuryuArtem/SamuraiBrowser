@@ -89,7 +89,7 @@
 
         <div>
             <a href="https://4pda.to/forum/index.php?act=idx">4pda</a>
-            <a href="https://cdn.discordapp.com/attachments/1131482002157534289/1315112803907928144/image.png?ex=675639be&is=6754e83e&hm=7500340020b527057de0ff0095c6af116f1e87241b0b83f6e3b1d50dc6c32130&">нипон лох</a>
+            <a href="https://cdn.discordapp.com/attachments/1131482092157534289/1315112803907928144/image.png?ex=675639be&is=6754e83e&hm=7500340020b527057de0ff0095c6af116f1e87241b0b83f6e3b1d50dc6c32130">нипон лох</a>
             <a href="https://www.youtube.com/watch?v=Abrw9anp_so">порно хаб</a>
         </div>
     </div>
@@ -97,8 +97,14 @@
     <script>
         function searchGoogle() {
             const query = document.getElementById('searchQuery').value;
-            const url = https://www.google.com/search?q=${encodeURIComponent(query)};
-            window.location.href = url; // Открыть в той же вкладке
+            console.log("Поиск: " + query); // Лог в консоль для проверки входного значения
+            
+            if (query) {
+                const url = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+                window.location.href = url; // Открыть в той же вкладке
+            } else {
+                alert('Пожалуйста, введите запрос поиска.'); // Сообщение для пустого ввода
+            }
         }
     </script>
 </body>
