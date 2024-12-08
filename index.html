@@ -80,7 +80,7 @@
     <div class="content">
         <h1>SamuraiSearch</h1>
         <img src="https://production-enterprise-static.downloads.crowdin.com/405200002/organization-logo/small/d9eb7383276df3043b66867e1617f889253.png" alt="Avatar" style="border-radius: 10px; max-width: 100%; height: auto;">
-        
+
         <!-- Поисковая строка и кнопка -->
         <div class="search-container">
             <input type="text" class="search-input" id="searchQuery" placeholder="Введите запрос...">
@@ -97,8 +97,7 @@
     <script>
         function searchGoogle() {
             const query = document.getElementById('searchQuery').value;
-            console.log("Поиск: " + query); // Лог в консоль для проверки входного значения
-            
+            console.log("Поиск: " + query); // Лог для проверки вводимого значения
             if (query) {
                 const url = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
                 window.location.href = url; // Открыть в той же вкладке
@@ -106,6 +105,13 @@
                 alert('Пожалуйста, введите запрос поиска.'); // Сообщение для пустого ввода
             }
         }
+
+        // Добавление обработчика события для поля ввода
+        document.getElementById('searchQuery').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                searchGoogle(); // Вызываем поиск при нажатии "Enter"
+            }
+        });
     </script>
 </body>
 </html>
